@@ -11,8 +11,6 @@ Player registrations are scoped to the Discord server where they are created. Th
 - A Discord bot token
 - `Manage Nicknames` and `Manage Roles` permissions for the bot in the target server
 
-Keep the API key and Discord token in `.env`. Do not upload that file to GitHub or share its contents publicly.
-
 ## Configuration
 
 Create the local configuration file from the template:
