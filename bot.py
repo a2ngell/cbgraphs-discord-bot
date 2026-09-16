@@ -168,11 +168,11 @@ class CBGraphsApi:
         # hrefs here: doing so made Discord's PNG differ from the source card.
         svg = await self.get_bytes(path)
         # CairoSVG does not always select the same fallback font as Chromium for
-        # full-width/CJK player names. Malgun Gothic is available on Windows and
-        # is harmless as a fallback on Linux, where the next installed font wins.
+        # full-width/CJK player names. Noto CJK is used on Linux and Malgun
+        # Gothic remains the Windows fallback.
         svg = svg.replace(
             b"font-family=\"Inter,Segoe UI,Arial,sans-serif\"",
-            b"font-family=\"Malgun Gothic,Inter,Segoe UI,Arial,sans-serif\"",
+            b"font-family=\"Noto Sans CJK JP,Malgun Gothic,Inter,Segoe UI,Arial,sans-serif\"",
         )
         global cairosvg
         if cairosvg is None:
